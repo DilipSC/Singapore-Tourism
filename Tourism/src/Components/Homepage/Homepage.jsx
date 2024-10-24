@@ -34,6 +34,30 @@ const Homepage = () => {
     autoplaySpeed: 3000,
   };
 
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const events = [
+    {
+      name: 'Studio Ghibli Exhibition',
+      dates: 'Oct 4, 2024 – Feb 2, 2025',
+      details: 'Explore iconic scenes from Studio Ghibli films at the ArtScience Museum.',
+      image: 'https://i.ibb.co/7JBMyvB/ghibliexhibit-main.jpg',
+    },
+    {
+      name: 'Singapore River Festival',
+      dates: 'Oct 4 – 13, 2024',
+      details: 'Light shows and traditional games along the river.',
+      image: 'https://i.ibb.co/W03J5bC/vibrant-river-festival.webp',
+    },
+    {
+      name: 'Halloween Sail: The Sail of Souls',
+      dates: 'Oct 26, 29-31, 2024',
+      details: 'Spooky dinner cruise with haunted cabins.',
+      image: 'https://i.ibb.co/4gMZ7YP/Halloween-Horror-Nights-Singapore-2022.jpg',
+    },
+    
+  ];
+
   return (
     <div className="font-poppins">
       {/* Navbar */}
@@ -183,16 +207,16 @@ const Homepage = () => {
 
       <div className="min-h-screen bg-gray-900 text-white flex">
       {/* Left Section (Carousel) */}
-      <div className="w-1/2 p-4">
+      <div className="w-1/2 p-4 pt-20">
       <Slider {...settings} className="w-full h-full">
       <div>
-        <img src="https://via.placeholder.com/500x300" alt="Slide 1" className="w-full h-full object-cover" />
+        <img src="https://i.ibb.co/cF4T9h5/Whats-App-Image-2024-10-24-at-19-49-47-2.jpg" alt="Slide 1" className="w-full h-screen align-center object-cover" /> 
       </div>
       <div>
-        <img src="https://via.placeholder.com/500x300" alt="Slide 2" className="w-full h-full object-cover" />
+        <img src="https://i.ibb.co/p14vgpz/Whats-App-Image-2024-10-24-at-19-49-48.jpg" alt="Slide 2" className="w-full h-screen align-center object-cover" />
       </div>
       <div>
-        <img src="https://via.placeholder.com/500x300" alt="Slide 3" className="w-full h-full object-cover" />
+        <img src="https://i.ibb.co/sQcxMJy/Whats-App-Image-2024-10-24-at-19-49-47-1.jpg" alt="Slide 3" className="w-full h-screen align-center object-cover" />
       </div>
     </Slider>
       </div>
@@ -202,7 +226,7 @@ const Homepage = () => {
         <h1 className="text-4xl font-bold mb-4">Singapore: A Global City of Innovation and Culture</h1>
         <h2 className="text-2xl mb-4">A Harmonious Blend of Tradition and Modernity</h2>
         <p className="text-lg">
-        Singapore, often referred to as the "Lion City," is a dynamic global hub known for its rapid growth, cutting-edge innovation, and cultural diversity. Despite its small size, Singapore is a powerhouse in finance, technology, and trade, attracting businesses and tourists from around the world. The city-state seamlessly blends modern skyscrapers with lush greenery and rich cultural heritage, offering a unique experience where tradition meets the future. Whether it's the vibrant food scene, iconic landmarks like Marina Bay Sands, or the efficiency of its public services, Singapore continues to impress as a city of the future.
+        Singapore, often referred to as the "Lion City," is a dynamic global hub known for its rapid growth, cutting-edge innovation, and cultural diversity. Despite its small size, Singapore is a powerhouse in finance, technology, and trade, attracting businesses and tourists from around the world. 
         </p>
       </div>
     </div>
@@ -210,10 +234,14 @@ const Homepage = () => {
 
 
     {/*changing cards */}
+    <div >
+
+      
 
     <div className="min-h-screen bg-gray-900 text-white p-10">
+      <h1 className='font-bold text-6xl text-center'>Things Yoy Must Do</h1>
       {/* Buttons */}
-      <div className="flex justify-center mb-8 space-x-4">
+      <div className="flex justify-center mb-8 space-x-4 pt-16">
         {['city', 'nature', 'architecture', 'dine', 'heritage', 'family'].map((category) => (
           <button
             key={category}
@@ -241,8 +269,67 @@ const Homepage = () => {
 ))}
       </div>
     </div>
+    </div>
 
     {/*Event list */}
+    <div className='dark:bg-gray-900'>
+    <div className="container mx-auto px-4 py-8 dark:bg-gray-900">
+      <h2 className="text-6xl font-bold text-center mb-8 text-white pb-10">Upcoming Events in Singapore</h2>
+
+      <div className="flex flex-col md:flex-row justify-between items-center p-6">
+      {/* Left section with text and link */}
+      <div className="w-full md:w-1/2 text-left mb-6 md:mb-0 pb-10">
+        <h1 className="text-4xl font-bold mb-2 text-white">Singapore Food Festival</h1>
+        <p className="mb-4 text-white">
+          Experience the vibrant food culture of Singapore at the Singapore Food Festival, featuring
+          a variety of local dishes and culinary experiences.
+        </p>
+        <a 
+          href="https://www.singaporefoodfestival.com" 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="text-blue-500 underline"
+        >
+          Learn More
+        </a>
+      </div>
+      
+      {/* Right section with image */}
+      <div className="w-full md:w-1/2 overflow-hidden">
+  <img
+    src="https://i.ibb.co/F3MV79f/featured-image-781x429.jpg"
+    alt="Singapore Food Festival"
+    className="w-full h-auto rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-110"
+  />
+</div>
+
+    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {events.map((event, index) => (
+          <div
+            key={index}
+            className={`transform transition-transform duration-500 ease-in-out shadow-lg rounded-lg overflow-hidden ${
+              hoveredIndex === index ? 'scale-105 bg-gray-700 text-white' : 'dark:bg-gray-800 text-white'
+            }`}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <img
+              src={event.image}
+              alt={event.name}
+              className="w-full h-48 object-cover"
+            />
+            <div className="p-6">
+              <h3 className="text-2xl font-bold mb-2">{event.name}</h3>
+              <p className="text-gray-600">{event.dates}</p>
+              <p className="mt-2">{event.details}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+</div>
+
 
 
 
