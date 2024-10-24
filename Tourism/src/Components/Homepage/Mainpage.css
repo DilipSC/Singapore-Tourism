@@ -1,0 +1,9 @@
+.navbar {
+    transition: background-color 0.3s ease;
+}
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Navbar color after scrolling */
+}
+.slick-prev, .slick-next {
+    color: white !important;
+  }
