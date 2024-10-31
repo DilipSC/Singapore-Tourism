@@ -8,6 +8,7 @@ import { BrowserRouter,Routes,Route, Router } from 'react-router-dom';
 import Homepage from './Components/Homepage/Homepage'
 import Signup from './Components/Login&Signup/Signup';
 import Login from './Components/Login&Signup/Login';
+import Tourist from './Components/Tourist-Attraction/Tourist';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Route path="/signup" element={<Signup/>}/>
       <Route path="/home" element={<Homepage/>}/>
       <Route path="/" element={<Login/>}/>
+      <Route path="/touristattraction" element={<Tourist/>}/>
 
       </Routes></BrowserRouter>
 
