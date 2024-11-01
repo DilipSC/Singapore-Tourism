@@ -1,4 +1,7 @@
 import React, { useEffect, useState, useRef} from "react";
+import { doc, getDoc } from "firebase/firestore"; 
+import { onAuthStateChanged } from "firebase/auth";
+import { auth, db } from "../../firebase";
 import "./Mainpage.css";
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -8,8 +11,54 @@ import Chatbot from "../Chatbot/ChatBot";
 
 
 const Homepage = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('city');
+  const [userUid, setUserUid] = useState(null);
+const [userEmail, setUserEmail] = useState("");
+const [userFullName, setUserFullName] = useState("");
+
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    if (user) {
+      setUserUid(user.uid);
+      setUserEmail(user.email);
+
+      try {
+        const userDocRef = doc(db, "users", user.uid);
+        const userDoc = await getDoc(userDocRef);
+
+        if (userDoc.exists()) {
+          const userData = userDoc.data();
+          if (userData && userData.fullname) {
+            setUserFullName(userData.fullname);
+          } else {
+            console.error("Full name not found in user document.");
+          }
+        } else {
+          // Document does not exist, you may want to create it
+          console.error("User document does not exist. Creating a new one...");
+          // Example to create a document
+          await setDoc(userDocRef, { fullname: "Default Name" }); // Replace "Default Name" as needed
+        }
+      } catch (error) {
+        console.error("Error fetching/creating user data:", error);
+      }
+    } else {
+      setUserUid(null);
+      setUserEmail("");
+      setUserFullName("");
+    }
+  });
+
+  return () => unsubscribe();
+}, []);
+
+
+
+
+
 
   const LINKS = [
     {
@@ -151,12 +200,60 @@ const Homepage = () => {
             </a>
 
             <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-              <button
-                type="button"
-                className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-              >
-                Login
-              </button>
+            <div className="relative">
+  {/* Check if userEmail is present */}
+  {userEmail ? (
+    <div className="relative">
+      <button
+        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center"
+        type="button"
+        onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle the dropdown
+      >
+        {userFullName || "Loading..."} {/* Display 'Loading...' if userFullName is not set */}
+        <svg
+          className={`w-4 h-4 ml-2 transition-transform ${
+            isDropdownOpen ? "rotate-180" : "rotate-0"
+          }`}
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </button>
+      {isDropdownOpen && ( // Conditionally render the dropdown menu
+        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
+          <ul className="py-1">
+            <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+              {userEmail}
+            </li>
+            <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+              Full Name: {userFullName}
+            </li>
+            {/* Add more options here if needed, like "Logout" */}
+          </ul>
+        </div>
+      )}
+    </div>
+  ) : (
+    <button
+      type="button"
+      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Login
+    </button>
+  )}
+</div>
+
+
+
+
               <button
                 data-collapse-toggle="navbar-sticky"
                 type="button"

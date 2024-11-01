@@ -9,6 +9,7 @@ import Homepage from './Components/Homepage/Homepage'
 import Signup from './Components/Login&Signup/Signup';
 import Login from './Components/Login&Signup/Login';
 import Tourist from './Components/Tourist-Attraction/Tourist';
+import Feedback from './Components/Feedback/Feedback';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/home" element={<Homepage/>}/>
       <Route path="/" element={<Login/>}/>
       <Route path="/touristattraction" element={<Tourist/>}/>
+      <Route path='/feedback' element={<Feedback/>}/>
 
       </Routes></BrowserRouter>
 
