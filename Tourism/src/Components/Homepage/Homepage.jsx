@@ -8,7 +8,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Typography } from "@material-tailwind/react";
 import Chatbot from "../Chatbot/ChatBot";
-
+import { Navigate } from "react-router-dom";
+import { signOut } from "firebase/auth"; // Import signOut from Firebase
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -18,6 +20,7 @@ const Homepage = () => {
   const [userUid, setUserUid] = useState(null);
 const [userEmail, setUserEmail] = useState("");
 const [userFullName, setUserFullName] = useState("");
+const navigate = useNavigate();
 
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -174,6 +177,19 @@ useEffect(() => {
         return () => window.removeEventListener('resize', updateSlider);
     }, [currentIndex]);
 
+    const handleLogout = async () => {
+      try {
+        await signOut(auth);
+        setUserUid(null);
+        setUserEmail("");
+        setUserFullName("");
+        console.log("User signed out successfully");
+        navigate("/"); // Navigate to the login page
+      } catch (error) {
+        console.error("Error signing out: ", error);
+      }
+    };
+
 
   return (
     <div className="font-poppins">
@@ -201,56 +217,60 @@ useEffect(() => {
 
             <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             <div className="relative">
-  {/* Check if userEmail is present */}
-  {userEmail ? (
-    <div className="relative">
-      <button
-        className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center"
-        type="button"
-        onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle the dropdown
-      >
-        {userFullName || "Loading..."} {/* Display 'Loading...' if userFullName is not set */}
-        <svg
-          className={`w-4 h-4 ml-2 transition-transform ${
-            isDropdownOpen ? "rotate-180" : "rotate-0"
-          }`}
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
-      </button>
-      {isDropdownOpen && ( // Conditionally render the dropdown menu
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
-          <ul className="py-1">
-            <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-              {userEmail}
-            </li>
-            <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
-              Full Name: {userFullName}
-            </li>
-            {/* Add more options here if needed, like "Logout" */}
-          </ul>
+      {/* Check if userEmail is present */}
+      {userEmail ? (
+        <div className="relative">
+          <button
+            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 flex items-center"
+            type="button"
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)} // Toggle the dropdown
+          >
+            {userFullName || "Loading..."} {/* Display 'Loading...' if userFullName is not set */}
+            <svg
+              className={`w-4 h-4 ml-2 transition-transform ${
+                isDropdownOpen ? "rotate-180" : "rotate-0"
+              }`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+          {isDropdownOpen && ( // Conditionally render the dropdown menu
+            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-20">
+              <ul className="py-1">
+                <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                  {userEmail}
+                </li>
+                <li className="block px-4 py-2 text-gray-800 hover:bg-gray-200">
+                  Full Name: {userFullName}
+                </li>
+                <li
+                  className="block px-4 py-2 text-gray-800 hover:bg-gray-200 cursor-pointer"
+                  onClick={handleLogout} // Logout functionality
+                >
+                  Logout
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
+      ) : (
+        <button
+          type="button"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Login
+        </button>
       )}
     </div>
-  ) : (
-    <button
-      type="button"
-      className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-    >
-      Login
-    </button>
-  )}
-</div>
-
 
 
 
