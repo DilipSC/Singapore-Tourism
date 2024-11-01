@@ -1,5 +1,8 @@
 import React,{useState, useEffect} from 'react'
 import './Mainpage.css'
+import FuturisticHero from './FuturisticHero';
+import InfoCards from './InfoCards';
+import FuturisticCarousel from './FuturisticCarousel';
 
 export default function Tourist() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -151,13 +154,9 @@ export default function Tourist() {
 
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-cover bg-center" style={{ backgroundImage: "url('https://i.ibb.co/gMSNYSG/marina-bay-sands-singapore-Marina-Bay-Sands-Resort.jpg')" }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">Tourist Spots That Will Leave You Awestruck</h1>
-        <p className="mt-4 text-lg sm:text-xl lg:text-2xl max-w-xl mx-auto">Uncover Singapore’s Hidden Wonders: Tourist Spots Beyond Imagination</p>
-        </div>
-      </section>
+      <FuturisticHero/>
+      <InfoCards/>
+      <FuturisticCarousel/>
 
       {/* Cards abt tourism */}
 

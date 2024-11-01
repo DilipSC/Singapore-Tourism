@@ -8,7 +8,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Typography } from "@material-tailwind/react";
 import Chatbot from "../Chatbot/ChatBot";
-import { Navigate } from "react-router-dom";
 import { signOut } from "firebase/auth"; // Import signOut from Firebase
 import { useNavigate } from "react-router-dom";
 

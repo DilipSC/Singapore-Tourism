@@ -10,6 +10,7 @@ import Signup from './Components/Login&Signup/Signup';
 import Login from './Components/Login&Signup/Login';
 import Tourist from './Components/Tourist-Attraction/Tourist';
 import Feedback from './Components/Feedback/Feedback';
+import FoodHubs from './Components/FoodHubs/FoodHubs'
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
       <Route path="/" element={<Login/>}/>
       <Route path="/touristattraction" element={<Tourist/>}/>
       <Route path='/feedback' element={<Feedback/>}/>
+      <Route path='/foodhubs' element={<FoodHubs/>}/>
 
       </Routes></BrowserRouter>
 
