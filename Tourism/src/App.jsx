@@ -11,6 +11,8 @@ import Login from './Components/Login&Signup/Login';
 import Tourist from './Components/Tourist-Attraction/Tourist';
 import Feedback from './Components/Feedback/Feedback';
 import FoodHubs from './Components/FoodHubs/FoodHubs'
+import MarinaBaySands from './Components/Tourist-Attraction/TouristBlog/MarinaBaySands';
+import Guide from './Components/Guide/Guide';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
       <Route path="/touristattraction" element={<Tourist/>}/>
       <Route path='/feedback' element={<Feedback/>}/>
       <Route path='/foodhubs' element={<FoodHubs/>}/>
+      <Route path='/marinabaysands' element={<MarinaBaySands/>}/>
+      <Route path='/guide' element={<Guide/>}/>
 
       </Routes></BrowserRouter>
 

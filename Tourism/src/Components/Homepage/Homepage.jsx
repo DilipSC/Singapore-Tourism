@@ -362,45 +362,56 @@ useEffect(() => {
 
       {/* Hero Section */}
       <section>
-        <section className="bg-cover bg-center bg-[url('https://i.ibb.co/h7fx6rf/sig.jpg')] bg-gray-700 bg-blend-multiply h-full">
-          <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-            <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
-              Singapore: The Future of Urban Living
-            </h1>
-            <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
-              Singapore is a unique blend of cultures, where the East and West converge in harmony. As a multicultural hub, it is home to a rich tapestry of traditions from the Chinese, Malay, Indian, and Eurasian communities, each contributing to the vibrant national identity.
-            </p>
-            <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-              <a
-                href="#"
-                className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+      <section className="relative h-screen bg-cover bg-center bg-gray-700 bg-blend-multiply" style={{ backgroundImage: "url('https://i.ibb.co/h7fx6rf/sig.jpg')" }}>
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 opacity-80"></div>
+
+      {/* Main Content */}
+      <div className="relative z-10 flex items-center justify-center h-full text-center">
+        <div className="px-4 mx-auto max-w-screen-xl text-white">
+          {/* Heading with animation */}
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none mb-4 transform transition duration-500 hover:scale-110 animate-fadeInUp">
+            Singapore: The Future of Urban Living
+          </h1>
+
+          {/* Paragraph with animation */}
+          <p className="text-lg md:text-xl lg:text-2xl text-gray-300 mb-8 sm:px-16 lg:px-48 transform transition duration-500 hover:scale-105 animate-fadeInUp delay-150">
+            Singapore is a unique blend of cultures, where the East and West converge in harmony. As a multicultural hub, it is home to a rich tapestry of traditions from the Chinese, Malay, Indian, and Eurasian communities, each contributing to the vibrant national identity.
+          </p>
+
+          {/* Buttons with animation */}
+          <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transform transition-transform duration-300 hover:scale-105"
+            >
+              Explore
+              <svg
+                className="w-4 h-4 ml-2 rtl:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 10"
+                aria-hidden="true"
               >
-                Explore
-                <svg
-                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-              <a
-                href="#"
-                className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
-              >
-                Learn more
-              </a>
-            </div>
+                <path
+                  d="M1 5h12m0 0L9 1m4 4L9 9"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              className="inline-flex items-center justify-center py-3 px-5 sm:ml-4 text-base font-medium text-white rounded-lg border border-white hover:bg-white hover:text-gray-900 focus:ring-4 focus:ring-gray-400 transform transition-transform duration-300 hover:scale-105"
+            >
+              Learn more
+            </a>
           </div>
-        </section>
+        </div>
+      </div>
+    </section>
       </section>
 
 
