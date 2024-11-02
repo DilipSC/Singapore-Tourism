@@ -13,6 +13,8 @@ import Feedback from './Components/Feedback/Feedback';
 import FoodHubs from './Components/FoodHubs/FoodHubs'
 import MarinaBaySands from './Components/Tourist-Attraction/TouristBlog/MarinaBaySands';
 import Guide from './Components/Guide/Guide';
+import Events from './Components/Events/Events';
+import About from './Components/About/About';
 
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
       <Route path='/foodhubs' element={<FoodHubs/>}/>
       <Route path='/marinabaysands' element={<MarinaBaySands/>}/>
       <Route path='/guide' element={<Guide/>}/>
+      <Route path='/events' element={<Events/>}/>
+      <Route path='/about' element={<About/>}/>
 
       </Routes></BrowserRouter>
 

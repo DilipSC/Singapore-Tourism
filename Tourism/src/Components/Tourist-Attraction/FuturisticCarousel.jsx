@@ -7,19 +7,19 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 const slides = [
   {
     id: 1,
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
     title: 'Future City',
     description: 'A glimpse into the sustainable urban landscapes of tomorrow, featuring vertical gardens and clean energy solutions.',
   },
   {
     id: 2,
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
     title: 'AI Assistant',
     description: 'Next-generation AI companions that help with daily tasks, learning, and personal growth.',
   },
   {
     id: 3,
-    image: '/placeholder.svg?height=400&width=400',
+    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
     title: 'Space Exploration',
     description: 'Cutting-edge spacecraft designed for long-distance space travel and potential colonization of other planets.',
   },
