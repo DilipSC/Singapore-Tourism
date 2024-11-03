@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-export default function MarinaBaySands() {
+export default function ArtScienceMuseum() {
   const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export default function MarinaBaySands() {
     <div className="min-h-screen bg-black text-white overflow-hidden">
       <header className="fixed w-full z-50 bg-black bg-opacity-50 backdrop-blur-md">
         <nav className="container mx-auto px-6 py-3">
-          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-teal-600">
-            Marina Bay Sands
+          <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600">
+            ArtScience Museum
           </h1>
         </nav>
       </header>
@@ -33,7 +33,7 @@ export default function MarinaBaySands() {
           <motion.div
             className="absolute inset-0 z-0"
             style={{
-              background: `radial-gradient(circle, rgba(2, 62, 138, 1) ${scrollY / 10}%, rgba(1, 30, 60, 1) 100%)`
+              background: `radial-gradient(circle, rgba(10, 30, 60, 1) ${scrollY / 10}%, rgba(30, 10, 10, 1) 100%)`
             }}
           />
           <motion.h2
@@ -42,35 +42,29 @@ export default function MarinaBaySands() {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            Welcome to Marina Bay Sands
+            Explore the ArtScience Museum
           </motion.h2>
         </section>
 
         <section className="container mx-auto px-6 py-20">
           <motion.div className="grid grid-cols-1 md:grid-cols-2 gap-12" {...fadeInUp}>
             <div>
-              <h3 className="text-3xl font-semibold mb-4">The Jewel of Singapore</h3>
+              <h3 className="text-3xl font-semibold mb-4">A Fusion of Art and Science</h3>
               <p className="text-gray-300 mb-4">
-                Marina Bay Sands is more than just a hotel—it’s an iconic landmark and a symbol of modern 
-                architectural brilliance. With its distinct three-tower structure connected by a stunning 
-                SkyPark, it stands as a global destination for luxury, entertainment, and breathtaking 
-                views of Singapore.
+                The ArtScience Museum is a stunning architectural marvel located in the Marina Bay Sands. It is renowned for its unique lotus-inspired design and is dedicated to exploring the intersection of art, science, culture, and technology.
               </p>
               <p className="text-gray-300 mb-4">
-                The SkyPark offers a unique infinity pool experience, where guests can swim with a view of 
-                the skyline. It’s one of the most photographed locations in Singapore and a must-visit 
-                spot for anyone in the city.
+                With a diverse range of exhibitions, the museum showcases international art and science displays, including immersive installations and innovative multimedia presentations that captivate visitors of all ages.
               </p>
               <p className="text-gray-300 mb-6">
-                With world-class dining, high-end shopping, and an impressive ArtScience Museum, Marina 
-                Bay Sands brings together everything for a perfect luxury experience.
+                The museum also features the permanent exhibition "Future World," a collaboration with teamLab, where digital art and interactive technology come together to create a mesmerizing experience.
               </p>
               <motion.button
-                className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition duration-300"
+                className="px-6 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Explore More
+                Learn More
               </motion.button>
             </div>
             <motion.div
@@ -79,11 +73,11 @@ export default function MarinaBaySands() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src="/marina-bay-sands.jpg"
-                alt="Marina Bay Sands Hotel and Skyline"
+                src="/artscience_museum.jpg"
+                alt="ArtScience Museum"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-75" />
+              <div className="absolute inset-0 bg-gradient-to-t from-purple-800 to-transparent opacity-75" />
             </motion.div>
           </motion.div>
         </section>
@@ -97,7 +91,7 @@ export default function MarinaBaySands() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              Highlights of Marina Bay Sands
+              Highlights of the Museum
             </motion.h3>
             <motion.div 
               className="grid grid-cols-1 md:grid-cols-2 gap-8"
@@ -108,26 +102,26 @@ export default function MarinaBaySands() {
             >
               {[
                 {
-                  name: "Infinity Pool",
-                  description: "A remarkable pool experience with panoramic views of Singapore's skyline, exclusive to guests.",
-                  image: "/infinity-pool.jpg"
+                  name: "Future World",
+                  description: "An interactive digital art installation by teamLab, merging art, science, and technology.",
+                  image: "/future_world.jpg"
                 },
                 {
-                  name: "SkyPark",
-                  description: "The SkyPark offers an unforgettable experience with viewing decks, restaurants, and lush greenery.",
-                  image: "/skypark.jpg"
+                  name: "Art & Science Exhibitions",
+                  description: "Rotating exhibitions that explore various themes, showcasing global artists and scientists.",
+                  image: "/art_science_exhibitions.jpg"
                 },
                 {
-                  name: "ArtScience Museum",
-                  description: "A marvel of design, the museum showcases exhibitions that blend art, science, and technology.",
-                  image: "/artscience-museum.jpg"
+                  name: "Lotus Pavilion",
+                  description: "Admire the museum's iconic lotus-inspired architecture, symbolizing creativity and innovation.",
+                  image: "/lotus_pavilion.jpg"
                 },
                 {
-                  name: "The Shoppes at Marina Bay",
-                  description: "Luxury shopping destination featuring high-end brands, celebrity chef restaurants, and an indoor canal.",
-                  image: "/the-shoppes.jpg"
+                  name: "Education Programs",
+                  description: "Engaging workshops and educational activities for children and adults alike.",
+                  image: "/education_programs.jpg"
                 }
-              ].map((highlight, index) => (
+              ].map((attraction, index) => (
                 <motion.div
                   key={index}
                   className="bg-gray-800 rounded-lg overflow-hidden flex flex-col md:flex-row items-center"
@@ -136,10 +130,10 @@ export default function MarinaBaySands() {
                   transition={{ duration: 0.6 }}
                   viewport={{ once: true }}
                 >
-                  <img src={highlight.image} alt={highlight.name} className="w-full md:w-1/3 h-48 object-cover" />
+                  <img src={attraction.image} alt={attraction.name} className="w-full md:w-1/3 h-48 object-cover" />
                   <div className="p-6 flex-1">
-                    <h4 className="text-xl font-semibold mb-2">{highlight.name}</h4>
-                    <p className="text-gray-400">{highlight.description}</p>
+                    <h4 className="text-xl font-semibold mb-2">{attraction.name}</h4>
+                    <p className="text-gray-400">{attraction.description}</p>
                   </div>
                 </motion.div>
               ))}
@@ -149,24 +143,24 @@ export default function MarinaBaySands() {
 
         <section className="container mx-auto px-6 py-20">
           <motion.div
-            className="bg-gradient-to-r from-blue-800 to-teal-800 rounded-lg p-8 md:p-12"
+            className="bg-gradient-to-r from-purple-800 to-blue-800 rounded-lg p-8 md:p-12"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Stay Updated</h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6">Plan Your Visit</h3>
             <p className="text-xl text-gray-200 mb-8">
-              Subscribe to receive the latest updates, events, and exclusive offers at Marina Bay Sands.
+              Visit the ArtScience Museum to experience a harmonious blend of art and science in a stunning setting.
             </p>
             <form className="flex flex-col md:flex-row gap-4">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-2 rounded-md bg-white bg-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="flex-grow px-4 py-2 rounded-md bg-white bg-opacity-20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
               />
               <motion.button
-                className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                className="px-6 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -180,11 +174,11 @@ export default function MarinaBaySands() {
       <footer className="bg-gray-900 text-gray-300 py-12">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2024 Marina Bay Sands. All rights reserved.</p>
+            <p>&copy; 2024 ArtScience Museum Experience. All rights reserved.</p>
             <div className="flex space-x-4 mt-4 md:mt-0">
-              <a href="#" className="hover:text-blue-400 transition duration-300">Facebook</a>
-              <a href="#" className="hover:text-blue-400 transition duration-300">Instagram</a>
-              <a href="#" className="hover:text-blue-400 transition duration-300">YouTube</a>
+              <a href="#" className="hover:text-purple-400 transition duration-300">Twitter</a>
+              <a href="#" className="hover:text-purple-400 transition duration-300">LinkedIn</a>
+              <a href="#" className="hover:text-purple-400 transition duration-300">Instagram</a>
             </div>
           </div>
         </div>

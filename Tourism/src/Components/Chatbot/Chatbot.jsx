@@ -16,7 +16,7 @@ const Chatbot = () => {
   
     try {
       const response = await axios.post(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAnzbwfWe13zbpZf4ASUCUYAlHf11H4msM', // Replace YOUR_API_KEY with your actual API key
+        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAnzbwfWe13zbpZf4ASUCUYAlHf11H4msM',
         {
           contents: [
             {

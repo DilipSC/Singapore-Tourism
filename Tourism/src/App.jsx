@@ -15,6 +15,8 @@ import MarinaBaySands from './Components/Tourist-Attraction/TouristBlog/MarinaBa
 import Guide from './Components/Guide/Guide';
 import Events from './Components/Events/Events';
 import About from './Components/About/About';
+import GardensByTheBay from './Components/Tourist-Attraction/TouristBlog/GardensByTheBay';
+import SentosaIsland from './Components/Tourist-Attraction/TouristBlog/SentosaIsland';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
       <Route path='/guide' element={<Guide/>}/>
       <Route path='/events' element={<Events/>}/>
       <Route path='/about' element={<About/>}/>
+      <Route path='/gardensbythebay' element={<GardensByTheBay/>}/>
+      <Route path='/sentosaisland' element={<SentosaIsland/>}/>
 
       </Routes></BrowserRouter>
 

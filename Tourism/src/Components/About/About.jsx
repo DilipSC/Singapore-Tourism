@@ -9,7 +9,7 @@ const developers = [
     name: "Dhravya Shetty",
     role: "Frontend Developer",
     college: "Dayanand Sagar College of Engineering",
-    image: "https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png"
+    image: "https://i.ibb.co/Rbfn5ZN/Dhravya.jpg"
   },
   {
     name: "Dilip Chakravarthi",

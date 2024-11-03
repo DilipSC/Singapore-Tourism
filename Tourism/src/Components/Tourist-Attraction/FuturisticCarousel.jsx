@@ -7,21 +7,21 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react'
 const slides = [
   {
     id: 1,
-    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
-    title: 'Future City',
-    description: 'A glimpse into the sustainable urban landscapes of tomorrow, featuring vertical gardens and clean energy solutions.',
+    image: 'https://i.ibb.co/mXNDnBg/Marina-Bay-Sands-Singapore-Images.jpg',
+    title: 'Marina Bay Sands & Gardens by the Bay',
+    description: 'Picture a stunning skyline where modern architecture meets lush greenery—this is the essence of Marina Bay Sands and Gardens by the Bay. Marina Bay Sands, an iconic hotel with its spectacular rooftop infinity pool, offers visitors a chance to see Singapore from above, surrounded by breathtaking city views. Just steps away lies Gardens by the Bay, a futuristic nature park where towering Supertrees light up the night, and the Cloud Forest and Flower Dome showcase exotic plant life from around the world. Together, these attractions blend natural beauty with innovative design, making them a must-see in Singapore.',
   },
   {
     id: 2,
-    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
-    title: 'AI Assistant',
-    description: 'Next-generation AI companions that help with daily tasks, learning, and personal growth.',
+    image: 'https://i.ibb.co/Jkj68QH/Whats-App-Image-2024-10-24-at-20-37-41.jpg',
+    title: 'Sentosa Island',
+    description: 'Sentosa Island is the ultimate playground, packed with something for everyone. From the thrill of Universal Studios Singapore, where rides and shows bring movies to life, to the underwater wonders at S.E.A. Aquarium, Sentosa is a family-favorite destination. Adventure Cove Waterpark offers both excitement and relaxation with its water slides and a lazy river. For those seeking a peaceful escape, Sentosa’s beaches—such as Palawan Beach—are perfect for soaking up the sun and enjoying the sea breeze. This island brings together fun, adventure, and beach relaxation, all just minutes from the city.',
   },
   {
     id: 3,
-    image: 'https://i.ibb.co/sVjdwb8/Screenshot-2024-11-02-144556.png',
-    title: 'Space Exploration',
-    description: 'Cutting-edge spacecraft designed for long-distance space travel and potential colonization of other planets.',
+    image: 'https://i.ibb.co/CMSXQgp/Whats-App-Image-2024-10-24-at-20-31-42.jpg',
+    title: 'Chinatown & Little India',
+    description: 'Singapore’s rich cultural tapestry comes alive in the vibrant neighborhoods of Chinatown and Little India. In Chinatown, traditional shops, colorful shophouses, and the majestic Buddha Tooth Relic Temple make it a fascinating blend of old and new. Walking through Little India, visitors are greeted with bursts of color, aromatic spices, and intricate temple architecture, reflecting the area’s deep Indian roots. Both neighborhoods offer an array of flavors, shopping, and sights, inviting visitors to experience Singapore’s multicultural heritage and warm hospitality.',
   },
 ]
 
