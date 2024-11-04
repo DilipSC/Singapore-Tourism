@@ -306,7 +306,7 @@ useEffect(() => {
               <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent dark:bg-gray-800 md:dark:bg-transparent dark:border-gray-700">
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/home')}}
                     className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
                     aria-current="page"
                   >
@@ -315,7 +315,7 @@ useEffect(() => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/foodhubs')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Food Hubs
@@ -323,7 +323,7 @@ useEffect(() => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/touristattraction')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Tourist Attraction
@@ -332,7 +332,7 @@ useEffect(() => {
                 
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/events')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Events
@@ -340,7 +340,7 @@ useEffect(() => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/guide')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Guide
@@ -348,10 +348,27 @@ useEffect(() => {
                 </li>
                 <li>
                   <a
-                    href="#"
+                    onClick={()=>{navigate('/about')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     About
+                  </a>
+                </li>
+                
+                <li>
+                  <a
+                    onClick={()=>{navigate('/about')}}
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Cultural Heritage
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    
                   </a>
                 </li>
               </ul>
@@ -382,7 +399,7 @@ useEffect(() => {
           {/* Buttons with animation */}
           <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
             <a
-              href="#"
+              href="/touristattraction"
               className="inline-flex items-center justify-center py-3 px-5 text-base font-medium text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900 transform transition-transform duration-300 hover:scale-105"
             >
               Explore
@@ -403,7 +420,7 @@ useEffect(() => {
               </svg>
             </a>
             <a
-              href="#"
+              href="/guide"
               className="inline-flex items-center justify-center py-3 px-5 sm:ml-4 text-base font-medium text-white rounded-lg border border-white hover:bg-white hover:text-gray-900 focus:ring-4 focus:ring-gray-400 transform transition-transform duration-300 hover:scale-105"
             >
               Learn more

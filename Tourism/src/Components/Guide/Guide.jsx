@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import GuideNavbar from './GuideNavbar';
+import { useAuth } from '../AuthContext';
+
 
 export default function Guide() {
   const [activeSection, setActiveSection] = useState('overview');
+  const { isAuthenticated, logout } = useAuth();
 
   const sections = [
     { id: 'overview', title: 'Overview', emoji: '🇸🇬' },

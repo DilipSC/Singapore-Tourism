@@ -6,7 +6,7 @@ import TopRestaurantsSection from "./TopRestaurantsSection";
 const Navbar = () => (
   <nav className="bg-black bg-opacity-50 fixed top-0 left-0 right-0 z-50 py-4">
     <div className="container mx-auto flex justify-center items-center space-x-10">
-      <Link to="#home" className="text-white font-semibold text-lg hover:text-green-400 transition">Home</Link>
+      <Link to="/home" className="text-white font-semibold text-lg hover:text-green-400 transition">Home</Link>
       <Link to="#local-foods" className="text-white font-semibold text-lg hover:text-green-400 transition">Local Foods</Link>
       <Link to="#local-drinks" className="text-white font-semibold text-lg hover:text-green-400 transition">Local Drinks</Link>
       <Link to="#top-restaurants" className="text-white font-semibold text-lg hover:text-green-400 transition">Top Restaurants</Link>
