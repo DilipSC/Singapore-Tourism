@@ -16,7 +16,7 @@ const Chatbot = () => {
   
     try {
       const response = await axios.post(
-        'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyAnzbwfWe13zbpZf4ASUCUYAlHf11H4msM',
+        import.meta.env.VITE_GEMINI_API_KEY, // Replace the URL with the environment variable
         {
           contents: [
             {

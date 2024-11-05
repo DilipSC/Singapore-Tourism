@@ -357,20 +357,13 @@ useEffect(() => {
                 
                 <li>
                   <a
-                    onClick={()=>{navigate('/about')}}
+                    onClick={()=>{navigate('/culture')}}
                     className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     Cultural Heritage
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="#"
-                    className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    
-                  </a>
-                </li>
+                
               </ul>
             </div>
           </div>
@@ -468,7 +461,7 @@ useEffect(() => {
       
 
     <div className="min-h-screen bg-gray-900 text-white p-10">
-      <h1 className='font-bold text-6xl text-center'>Things Yoy Must Do</h1>
+      <h1 className='font-bold text-6xl text-center'>Things You Must Do</h1>
       {/* Buttons */}
       <div className="flex justify-center mb-8 space-x-4 pt-16">
         {['city', 'nature', 'architecture', 'dine', 'heritage', 'family'].map((category) => (
