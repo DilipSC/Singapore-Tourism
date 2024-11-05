@@ -192,6 +192,7 @@ useEffect(() => {
 
   return (
     <div className="font-poppins">
+      <Chatbot/>
       {/* Navbar */}
       <section>
         <nav
