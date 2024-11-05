@@ -16,6 +16,7 @@ import About from './Components/About/About';
 import GardensByTheBay from './Components/Tourist-Attraction/TouristBlog/GardensByTheBay';
 import SentosaIsland from './Components/Tourist-Attraction/TouristBlog/SentosaIsland';
 import NotFound from './Components/NotFound';
+import Culture from './Components/Culture/Culture';
 
 
 const ProtectedRoute = ({ children }) => {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/gardensbythebay" element={<GardensByTheBay />} />
           <Route path="/sentosaisland" element={<SentosaIsland />} />
+          <Route path='/culture' element={<Culture/>}/>
           <Route path="/notfound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} /> {/* Catch-all route for undefined paths */}
         </Routes>
