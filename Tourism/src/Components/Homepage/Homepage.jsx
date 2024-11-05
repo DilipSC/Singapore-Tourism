@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Typography } from "@material-tailwind/react";
-import Chatbot from "../Chatbot/ChatBot";
+import Chatbot from "../Chat/ChatBot";
 import { signOut } from "firebase/auth"; // Import signOut from Firebase
 import { useNavigate } from "react-router-dom";
 
