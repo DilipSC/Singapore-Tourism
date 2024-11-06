@@ -82,7 +82,7 @@ export default function Login() {
         </form>
 
         <p className="text-white text-center p-4">
-          Don’t have an account? <a className="text-blue-400" href="/Signup">Sign Up</a>
+          Don’t have an account? <a className="text-blue-400" href="/signup">Sign Up</a>
         </p>
         <h1 className="text-gray-500 text-center">-OR-</h1>
 

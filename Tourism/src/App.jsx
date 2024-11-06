@@ -17,6 +17,12 @@ import GardensByTheBay from './Components/Tourist-Attraction/TouristBlog/Gardens
 import SentosaIsland from './Components/Tourist-Attraction/TouristBlog/SentosaIsland';
 import NotFound from './Components/NotFound';
 import Culture from './Components/Culture/Culture';
+import ArtScienceMuseum from './Components/Tourist-Attraction/TouristBlog/ArtScienceMuseum';
+import Chinatown from './Components/Tourist-Attraction/TouristBlog/Chinatown';
+import ClarkeQuay from './Components/Tourist-Attraction/TouristBlog/ClarkeQuay';
+import OrchardRoad from './Components/Tourist-Attraction/TouristBlog/OrchardRoad';
+import SingaporeBotanicGardens from './Components/Tourist-Attraction/TouristBlog/SingaporeBotanicGardens';
+import SingaporeZoo from './Components/Tourist-Attraction/TouristBlog/SingaporeZoo';
 
 
 const ProtectedRoute = ({ children }) => {
@@ -35,13 +41,21 @@ function App() {
           <Route path="/touristattraction" element={<Tourist />} />
           <Route path="/feedback" element={<Feedback /> } />
           <Route path="/foodhubs" element={<FoodHubs />} />
-          <Route path="/MarinaBaySands" element={<MarinaBaySands />} />
+          <Route path="/marinabaysands" element={<MarinaBaySands />} />
           <Route path="/guide" element={<Guide />} />
           <Route path="/events" element={<Events />} />
           <Route path="/about" element={<About />} />
-          <Route path="/place/GardensbytheBay" element={<GardensByTheBay />} />
-          <Route path="/SentosaIsland" element={<SentosaIsland />} />
+          <Route path="/gardensbythebay" element={<GardensByTheBay />} />
+          <Route path="/sentosaisland" element={<SentosaIsland />} />
           <Route path='/culture' element={<Culture/>}/>
+          <Route path='/artsciencemuseum' element={<ArtScienceMuseum/>}/>
+          <Route path='/chinatown' element={<Chinatown/>}/>
+          <Route path='/clarequay' element={<ClarkeQuay/>}/>
+          <Route path='/orchardroad' element={<OrchardRoad/>}/>
+          <Route path='/singaporebotanicgardens' element={<SingaporeBotanicGardens/>}/>
+          <Route path='/singaporezoo' element={<SingaporeZoo/>}/>   
+
+
           <Route path="/notfound" element={<NotFound />} />
           <Route path="*" element={<NotFound />} /> {/* Catch-all route for undefined paths */}
         </Routes>

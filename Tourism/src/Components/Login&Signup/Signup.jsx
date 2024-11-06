@@ -137,7 +137,7 @@ export default function Signup() {
                             </button>
                         </form>
                         <h1 className='text-white text-center p-4'>
-                            Already have an account? <a className='text-blue-400' href="/Login">Login</a>
+                            Already have an account? <a className='text-blue-400' href="/">Login</a>
                         </h1>
                         <h1 className='text-gray-500 text-center'>-OR-</h1>
                         <div className="flex justify-end">
