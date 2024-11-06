@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { Typography } from "@material-tailwind/react";
-
+import ChatBot from '../Chat/Chatbot'
 import { signOut } from "firebase/auth"; // Import signOut from Firebase
 import { useNavigate } from "react-router-dom";
 
@@ -675,7 +675,7 @@ useEffect(() => {
 
 
 
-      
+      <ChatBot/>
      
 
 
