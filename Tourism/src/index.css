@@ -2,3 +2,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Add these styles for the animated star background */
+.stars {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 1744px 122px #FFF , 134px 1321px #FFF , 92px 859px #FFF /* Add more star positions */;
+  animation: animateStars 50s linear infinite;
+}
+
+.stars2 {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 1744px 122px #FFF , 134px 1321px #FFF , 92px 859px #FFF /* Add more star positions */;
+  animation: animateStars 100s linear infinite;
+}
+
+.stars3 {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 1744px 122px #FFF , 134px 1321px #FFF , 92px 859px #FFF /* Add more star positions */;
+  animation: animateStars 150s linear infinite;
+}
+
+@keyframes animateStars {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
